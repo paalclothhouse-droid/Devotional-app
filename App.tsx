@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { UserStats } from './types.ts';
 import Dashboard from './components/Dashboard.tsx';
@@ -129,7 +128,7 @@ const App: React.FC = () => {
 
   if (isBlocked) {
     return (
-      <div className="min-h-screen bg-[#0f141e] flex items-center justify-center p-8 text-center animate-in fade-in">
+      <div className="min-h-screen bg-[#0f141e] flex items-center justify-center p-8 text-center">
         <div className="card-main p-12 space-y-8 max-w-md border-red-500/40">
           <i className="fa-solid fa-ban text-red-500 text-5xl"></i>
           <h1 className="text-2xl font-black uppercase text-white">Access Restricted</h1>
@@ -147,7 +146,7 @@ const App: React.FC = () => {
       case 'community': return <Community lang={lang} onDonateClick={() => setShowDonateOverlay(true)} />;
       case 'admin': return <Admin />;
       case 'nitnem': return (
-        <div className="max-w-2xl mx-auto px-4 pt-10 text-center space-y-8 animate-in fade-in duration-700">
+        <div className="max-w-2xl mx-auto px-4 pt-10 text-center space-y-8">
            <div className="card-main p-14 space-y-14 shadow-2xl border-white/5 bg-gradient-to-br from-[#1a1f2c] to-[#0f141e]">
               <div className="space-y-3">
                 <h2 className="text-4xl font-black uppercase tracking-[0.2em] text-purple-accent italic">{t.spirit_path}</h2>
@@ -176,7 +175,7 @@ const App: React.FC = () => {
         </div>
       );
       case 'more': return (
-        <div className="max-w-2xl mx-auto px-4 pt-10 space-y-8 pb-32 animate-in fade-in">
+        <div className="max-w-2xl mx-auto px-4 pt-10 space-y-8 pb-32">
           <div className="card-main p-10 space-y-14 border-white/5 bg-gradient-to-br from-[#1a1f2c] to-[#0f141e]">
              <div className="flex items-center gap-8 p-10 bg-[#0a0e17] rounded-[3.5rem] border border-white/5">
                 <div className="w-28 h-28 bg-gradient-to-br from-purple-accent to-black rounded-[2.5rem] flex items-center justify-center text-5xl font-black text-white">
@@ -190,7 +189,6 @@ const App: React.FC = () => {
              <div className="grid grid-cols-2 gap-5">
                 {[
                   { id: 'bio', icon: 'fa-info-circle', label: t.biography, action: () => setActiveTab('bio') },
-                  { id: 'support_tab', icon: 'fa-headset', label: t.support, action: () => setActiveTab('support') },
                   { id: 'sewa', icon: 'fa-heart', label: t.sewa_hub, action: () => setShowDonateOverlay(true) },
                   { id: 'community_tab', icon: 'fa-users', label: t.community, action: () => setActiveTab('community') },
                   { id: 'whatsapp_tab', icon: 'fa-brands fa-whatsapp', label: t.whatsapp, action: () => setShowWhatsAppOverlay(true) },
@@ -216,8 +214,8 @@ const App: React.FC = () => {
   return (
     <div className={`min-h-screen bg-[#0f141e] text-gray-100 font-sans tracking-tight`}>
       {globalConfig.alertMessage && (
-        <div className="fixed inset-0 z-[200] bg-black/80 flex items-center justify-center p-6 backdrop-blur-md animate-in fade-in">
-           <div className="bg-[#0a0e17] rounded-[2rem] p-8 max-w-sm w-full border border-white/10 text-center space-y-6 animate-in zoom-in-95">
+        <div className="fixed inset-0 z-[200] bg-black/80 flex items-center justify-center p-6 backdrop-blur-md">
+           <div className="bg-[#0a0e17] rounded-[2rem] p-8 max-w-sm w-full border border-white/10 text-center space-y-6">
               <div className="w-16 h-16 bg-purple-accent/20 rounded-full flex items-center justify-center mx-auto text-purple-accent text-2xl">
                 <i className="fa-solid fa-bullhorn animate-pulse"></i>
               </div>
