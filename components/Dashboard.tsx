@@ -10,7 +10,6 @@ interface DashboardProps {
   lang: Language;
 }
 
-// Added the component implementation and default export to fix "no default export" error.
 const Dashboard: React.FC<DashboardProps> = ({ stats, setActiveTab, lang }) => {
   const [hukamnama, setHukamnama] = useState<Hukamnama | null>(null);
   const [loading, setLoading] = useState(true);
@@ -33,7 +32,6 @@ const Dashboard: React.FC<DashboardProps> = ({ stats, setActiveTab, lang }) => {
 
   return (
     <div className="max-w-3xl mx-auto px-4 pb-44 pt-10 space-y-10 animate-in fade-in duration-700">
-      {/* Header Summary */}
       <div className="grid grid-cols-2 gap-4">
         <div className="card-main p-6 border-purple-accent/20 bg-purple-accent/[0.02] flex items-center justify-between shadow-xl">
           <div>
@@ -55,7 +53,6 @@ const Dashboard: React.FC<DashboardProps> = ({ stats, setActiveTab, lang }) => {
         </div>
       </div>
 
-      {/* Hukamnama Section */}
       <div className="card-main p-8 md:p-14 space-y-10 border-white/5 bg-gradient-to-br from-[#1a1f2c] to-[#0a0e17] relative overflow-hidden group shadow-2xl">
         <div className="absolute top-0 right-0 p-6 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
            <span className="text-[12rem] font-black text-white italic leading-none">ੴ</span>
@@ -91,7 +88,6 @@ const Dashboard: React.FC<DashboardProps> = ({ stats, setActiveTab, lang }) => {
         )}
       </div>
 
-      {/* Progress Quick Link */}
       <button 
         onClick={() => setActiveTab('nitnem')}
         className="w-full card-main p-8 border-white/5 bg-[#0a0e17]/60 flex items-center justify-between group hover:border-purple-accent/30 transition-all shadow-xl"
@@ -109,11 +105,6 @@ const Dashboard: React.FC<DashboardProps> = ({ stats, setActiveTab, lang }) => {
            <i className="fa-solid fa-chevron-right"></i>
         </div>
       </button>
-
-      {/* Welcome / Quote */}
-      <div className="text-center py-10 opacity-30">
-        <p className="text-[8px] font-black uppercase tracking-[0.8em] text-gray-600">The Light is Within</p>
-      </div>
     </div>
   );
 };
