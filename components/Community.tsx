@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Language, translations } from '../translations';
+import { Language, translations } from '../translations.ts';
 
 interface CommunityProps {
   lang: Language;
@@ -25,7 +25,6 @@ const Community: React.FC<CommunityProps> = ({ lang, onDonateClick }) => {
   return (
     <div className="max-w-2xl mx-auto space-y-10 pb-40 px-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
       
-      {/* Community Narrative Section */}
       <div className="space-y-6">
         <div className="text-center space-y-3">
           <h2 className="text-4xl font-black italic uppercase tracking-tighter text-white">The Power of Sangat</h2>
@@ -42,7 +41,6 @@ const Community: React.FC<CommunityProps> = ({ lang, onDonateClick }) => {
         </div>
       </div>
 
-      {/* Global Impact Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="card-main p-6 text-center space-y-2 border-purple-accent/10">
           <i className="fa-solid fa-earth-americas text-2xl text-purple-accent"></i>
@@ -61,7 +59,6 @@ const Community: React.FC<CommunityProps> = ({ lang, onDonateClick }) => {
         </div>
       </div>
 
-      {/* Seva & Donation Call-to-Action */}
       <div className="card-main p-10 bg-[var(--primary-accent)]/5 border-2 border-[var(--primary-accent)]/20 relative overflow-hidden group">
         <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
           <i className="fa-solid fa-hand-holding-heart text-9xl -mr-10 -mt-10"></i>
@@ -94,7 +91,6 @@ const Community: React.FC<CommunityProps> = ({ lang, onDonateClick }) => {
         </div>
       </div>
 
-      {/* Upcoming Gatherings */}
       <div className="space-y-6">
         <div className="flex justify-between items-center px-2">
           <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-purple-accent">Sangat Calendar</h3>
@@ -131,7 +127,6 @@ const Community: React.FC<CommunityProps> = ({ lang, onDonateClick }) => {
         </div>
       </div>
 
-      {/* Community Notice */}
       <div className="text-center py-10 opacity-40">
         <p className="text-[8px] font-black uppercase tracking-[0.8em] text-gray-500">End of Community Pulse</p>
       </div>

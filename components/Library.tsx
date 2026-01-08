@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Language } from '../translations';
+import { Language } from '../translations.ts';
 
 interface LibraryProps {
   lang: Language;
