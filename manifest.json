@@ -1,0 +1,23 @@
+
+{
+  "name": "Faith Journey: Spiritual Path",
+  "short_name": "FaithJourney",
+  "description": "Daily Hukamnama, Nitnem tracking, and spiritual community hub.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f141e",
+  "theme_color": "#8a4fff",
+  "icons": [
+    {
+      "src": "https://i.imgur.com/8N69wP4.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.imgur.com/8N69wP4.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#8a4fff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.json">
+  <title>Faith Journey | Spiritual Path</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    :root {
+      --primary-accent: #8a4fff;
+      --primary-text: #b794f4;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f141e;
+      color: #ffffff;
+      margin: 0;
+      overflow-x: hidden;
+      /* Disable pull-to-refresh for a more native feel */
+      overscroll-behavior-y: contain;
+    }
+    .card-main {
+      background: #1a1f2c;
+      border-radius: 12px;
+      border: 1px solid #2d3548;
+    }
+    .hukamnama-card {
+      border-top: 4px solid var(--primary-accent);
+    }
+    .text-purple-accent { color: var(--primary-text); }
+    .bg-purple-accent { background-color: var(--primary-accent); }
+    
+    .support-btn {
+      background: var(--primary-accent);
+      color: white;
+      font-size: 11px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      position: fixed;
+      bottom: 140px;
+      right: 20px;
+      z-index: 40;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .heart-fab {
+      background: #fbbf24;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      z-index: 40;
+    }
+
+    /* PWA Splash fix */
+    @media all and (display-mode: standalone) {
+      body {
+        padding-top: env(safe-area-inset-top);
+      }
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "recharts": "https://esm.sh/recharts@^3.6.0"
+  }
+}
+</script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="index.tsx"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(reg => console.log('SW registered'))
+          .catch(err => console.log('SW reg failed', err));
+      });
+    }
+  </script>
+</body>
+</html>

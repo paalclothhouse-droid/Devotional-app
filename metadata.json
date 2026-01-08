@@ -1,0 +1,7 @@
+{
+  "name": "Spiritual Path MVP",
+  "description": "A daily religious engagement and habit-tracking app featuring Hukamnama, multimedia katha, and progress monitoring.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
