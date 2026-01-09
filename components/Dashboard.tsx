@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Hukamnama, UserStats } from '../types.ts';
 import { getDailyHukamnama } from '../services/geminiService.ts';
@@ -88,22 +87,44 @@ const Dashboard: React.FC<DashboardProps> = ({ stats, setActiveTab, lang }) => {
         )}
       </div>
 
+      {/* Sangat Calendar / Schedule Integrated Here */}
+      <div className="space-y-6">
+        <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-purple-accent px-2">Divine Schedule</h3>
+        <div className="space-y-4">
+          {[
+            { title: 'Amrit Vela Kirtan', time: '03:30 AM', date: 'DAILY', host: 'Darbar Sahib' },
+            { title: 'Evening Rehras', time: '06:15 PM', date: 'DAILY', host: 'Sangat Live' }
+          ].map((ev, i) => (
+            <div key={i} className="card-main p-6 flex items-center justify-between border-white/5 bg-[#0a0e17]/40">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-purple-accent/10 flex items-center justify-center text-purple-accent">
+                  <i className="fa-solid fa-calendar-day"></i>
+                </div>
+                <div>
+                  <h4 className="font-black text-sm text-white">{ev.title}</h4>
+                  <p className="text-[9px] font-black uppercase text-gray-500">{ev.host} • {ev.time}</p>
+                </div>
+              </div>
+              <div className="text-[9px] font-black uppercase text-yellow-500">{ev.date}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <button 
         onClick={() => setActiveTab('nitnem')}
         className="w-full card-main p-8 border-white/5 bg-[#0a0e17]/60 flex items-center justify-between group hover:border-purple-accent/30 transition-all shadow-xl"
       >
         <div className="flex items-center gap-6">
-           <div className="w-14 h-14 rounded-3xl bg-purple-accent/10 flex items-center justify-center text-purple-accent group-hover:bg-purple-accent group-hover:text-white transition-all duration-500">
+           <div className="w-14 h-14 rounded-3xl bg-purple-accent/10 flex items-center justify-center text-purple-accent">
               <i className="fa-solid fa-feather-pointed text-xl"></i>
            </div>
            <div className="text-left">
               <h4 className="font-black text-sm text-white">{t.nitnem_progress}</h4>
-              <p className="text-[9px] uppercase font-black text-gray-600 tracking-widest mt-1 group-hover:text-gray-400 transition-colors">{t.tap_verify}</p>
+              <p className="text-[9px] uppercase font-black text-gray-600 tracking-widest mt-1">{t.tap_verify}</p>
            </div>
         </div>
-        <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-gray-600 group-hover:text-purple-accent transition-all">
-           <i className="fa-solid fa-chevron-right"></i>
-        </div>
+        <i className="fa-solid fa-chevron-right text-gray-600"></i>
       </button>
     </div>
   );
