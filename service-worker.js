@@ -1,11 +1,8 @@
-
 const CACHE_NAME = 'faith-journey-v1';
 const ASSETS_TO_CACHE = [
   '/',
-  'index.html',
-  'index.tsx',
-  'App.tsx',
-  'manifest.json',
+  '/index.html',
+  '/manifest.json',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
 ];
 
